@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>שאלון חישוב החזר כספי</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>שאלון חישוב החזר כספי</h1>
+        <form id="questionnaire-form">
+            <!-- Question 1 -->
+            <div class="form-group">
+                <label for="marital-status">1. מהו מצבך המשפחתי?</label>
+                <select id="marital-status" required>
+                    <option value="" disabled selected>בחר אפשרות</option>
+                    <option value="רווק/ה">רווק/ה</option>
+                    <option value="נשוי/אה">נשוי/אה</option>
+                    <option value="גרוש/ה">גרוש/ה</option>
+                    <option value="אלמן/ה">אלמן/ה</option>
+                </select>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="form-group">
+                <label for="children">2. כמה ילדים תלויים בך מבחינה כלכלית?</label>
+                <select id="children" required>
+                    <option value="" disabled selected>בחר אפשרות</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2-4">2-4</option>
+                    <option value="5+">5 ומעלה</option>
+                </select>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="form-group">
+                <label for="income">3. מהו סכום הכנסתך נטו מעבודה בחודש?</label>
+                <select id="income" required>
+                    <option value="" disabled selected>בחר אפשרות</option>
+                    <option value="5000">עד 5,000 ש"ח</option>
+                    <option value="10000">בין 5,001 ל-10,000 ש"ח</option>
+                    <option value="15000">בין 10,001 ל-15,000 ש"ח</option>
+                    <option value="15001+">מעל 15,000 ש"ח</option>
+                </select>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="form-group">
+                <label for="spouse-income">4. מהי הכנסת בן/בת זוגך נטו (אם יש)?</label>
+                <select id="spouse-income">
+                    <option value="" disabled selected>בחר אפשרות</option>
+                    <option value="0">לא עובד/ת או ללא הכנסה</option>
+                    <option value="5000">עד 5,000 ש"ח</option>
+                    <option value="10000">בין 5,001 ל-10,000 ש"ח</option>
+                    <option value="10001+">מעל 10,000 ש"ח</option>
+                </select>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="form-group">
+                <label for="expenses">5. מהן ההוצאות המיוחדות שלך?</label>
+                <select id="expenses" required>
+                    <option value="" disabled selected>בחר אפשרות</option>
+                    <option value="0">אין הוצאות מיוחדות</option>
+                    <option value="1000">עד 1,000 ש"ח</option>
+                    <option value="2500">בין 1,001 ל-2,500 ש"ח</option>
+                    <option value="2501+">מעל 2,500 ש"ח</option>
+                </select>
+            </div>
+
+            <!-- Calculate Button -->
+            <button type="button" id="calculate-btn">חשב</button>
+        </form>
+
+        <!-- Results Section -->
+        <div id="results" class="hidden">
+            <h2>תוצאות</h2>
+            <p id="results-text"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

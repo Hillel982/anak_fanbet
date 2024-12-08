@@ -1,0 +1,21 @@
+document.getElementById("calculate-btn").addEventListener("click", function () {
+    const maritalStatus = document.getElementById("marital-status").value;
+    const children = document.getElementById("children").value;
+    const income = parseInt(document.getElementById("income").value) || 0;
+    const spouseIncome = parseInt(document.getElementById("spouse-income").value) || 0;
+    const expenses = parseInt(document.getElementById("expenses").value) || 0;
+
+    const totalIncome = income + spouseIncome;
+    let benefit = 0;
+
+    // Sample Calculation Logic
+    if (maritalStatus === "נשוי/אה") benefit += 1000;
+    if (children === "2-4") benefit += 1500;
+    if (totalIncome < 10000) benefit += 2000;
+
+    benefit -= expenses; // Deduct special expenses
+
+    const resultText = `החזר צפוי: ${benefit > 0 ? benefit : 0} ש"ח.`;
+    document.getElementById("results-text").textContent = resultText;
+    document.getElementById("results").classList.remove("hidden");
+});
